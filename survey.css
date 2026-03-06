@@ -1,0 +1,265 @@
+/* ===================================
+   Survey Page — survey.css
+   Only: Quick Polls + Google Form
+   =================================== */
+
+/* ── Page Header ──────────────────────
+   Already handled by styles.css
+   .page-header is global — no override
+   needed unless you want a custom bg
+   ─────────────────────────────────── */
+
+/* ── Survey Intro Card ───────────────── */
+.survey-intro {
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+.survey-intro i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.survey-intro h2 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.survey-intro p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto var(--spacing-sm);
+}
+
+/* ── Polls Container ─────────────────── */
+.polls-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+}
+
+/* ── Poll Card ───────────────────────── */
+.poll-card {
+    background: var(--surface2);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poll-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-light));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.poll-card:hover {
+    border-color: var(--glass-border);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,229,255,0.07);
+}
+
+.poll-card:hover::before { opacity: 1; }
+
+/* Poll number badge */
+.poll-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+}
+
+.poll-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.45;
+    margin-bottom: 1.1rem;
+    letter-spacing: -0.01em;
+}
+
+/* ── Poll Option Buttons ─────────────── */
+.poll-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.poll-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 100px;
+    border: 1px solid rgba(0,229,255,0.2);
+    background: rgba(0,229,255,0.04);
+    color: var(--text-secondary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.poll-option i {
+    color: var(--primary-color);
+    font-size: 0.75rem;
+}
+
+.poll-option:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: rgba(0,229,255,0.1);
+    transform: translateY(-1px);
+}
+
+.poll-option.selected {
+    background: linear-gradient(135deg, rgba(0,229,255,0.18), rgba(0,180,210,0.1));
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.poll-option:disabled {
+    cursor: default;
+    transform: none;
+}
+
+/* ── Poll Results ────────────────────── */
+.poll-results {
+    margin-top: 0.75rem;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+.result-item > span:first-child {
+    min-width: 90px;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.78rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-light));
+    transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.percentage {
+    min-width: 34px;
+    text-align: right;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.78rem;
+}
+
+.total-votes {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    margin: 0.6rem 0 0;
+    text-align: right;
+}
+
+.total-votes span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ── Google Form Embed ───────────────── */
+.form-embed-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--surface2);
+    border: 1px dashed rgba(0,229,255,0.2);
+    border-radius: var(--radius-lg);
+}
+
+.form-embed-placeholder i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    opacity: 0.7;
+}
+
+.form-embed-placeholder h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.form-embed-placeholder p {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    max-width: 400px;
+    margin: 0;
+}
+
+/* Actual iframe once you add your form URL */
+.form-wrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: #fff;
+    max-width: 800px;       
+    margin: 0 auto;         
+}
+
+.form-wrapper iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+    display: block;
+}
+
+/* ── Responsive ──────────────────────── */
+@media (max-width: 768px) {
+    .polls-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-wrapper iframe {
+        height: 500px;
+    }
+}
+@media (max-width: 1024px) {
+    .polls-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .polls-container { grid-template-columns: 1fr; }
+}

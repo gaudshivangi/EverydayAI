@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive AI Assistant for Everyday AI Awarenessa and Digital Literacy">
+    <title>Chatbot - Everyday AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbot.css">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">     
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <span>Everyday AI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="awareness.html">Awareness</a></li>
+                <li><a href="survey.html">Survey</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="chatbot.html" class="active">Chatbot</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="fade-in">AI Assistant — <span class="text-accent">Aiden</span></h1>
+        <p class="fade-in-delay-1">Ask anything about AI, digital literacy, ethics, and everyday technology</p>
+    </div>
+</section>
+
+    <!-- Chatbot & FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="chatbot-wrapper">
+
+                <!-- Chat Interface -->
+                <div class="chat-interface glass-card">
+                    <div class="chat-header">
+                        <div class="bot-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="bot-info">
+                            <h3>Aiden · Everyday AI Bot</h3>
+                            <p class="bot-status">
+                                <span class="status-dot"></span> Online · Ready to help
+                            </p>
+                        </div>
+                        <button class="clear-chat" onclick="clearChat()">
+                            <i class="fas fa-rotate-left"></i> Reset
+                        </button>
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message bot-message">
+                            <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                            <div class="message-content">
+                                <p>Hello! 👋 I'm <strong>Aiden</strong>, your AI literacy guide.</p>
+                                <p>Ask me anything about AI in everyday life — how it works, where it's used, or how to stay safe online.</p>
+                                <span class="msg-time" id="welcome-time"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-options" id="quickOptions">
+                        <button class="quick-option" onclick="askQuestion('What is Artificial Intelligence?')">
+                            <i class="fas fa-lightbulb"></i> What is AI?
+                        </button>
+                        <button class="quick-option" onclick="askQuestion('How is AI used in daily life?')">
+                            <i class="fas fa-house"></i> AI in Daily Life
+                        </button>
+                        <button class="quick-option" onclick="askQuestion('What are ethical AI practices?')">
+                            <i class="fas fa-scale-balanced"></i> Ethical AI
+                        </button>
+                        <button class="quick-option" onclick="askQuestion('How to use AI safely?')">
+                            <i class="fas fa-shield-alt"></i> AI Safety
+                        </button>
+                    </div>
+
+                    <div class="chat-input-container">
+                        <textarea
+                            id="chatInput"
+                            class="chat-input"
+                            placeholder="Ask something about AI..."
+                            rows="1"
+                            autocomplete="off"
+                        ></textarea>
+                        <button class="send-button" id="sendBtn" onclick="sendMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-sidebar glass-card">
+                    <div class="section-header">
+                        <i class="fas fa-circle-question"></i>
+                        <h2>Frequently Asked Questions</h2>
+                    </div>
+
+                    <div class="faq-list">
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What is Artificial Intelligence?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Artificial Intelligence (AI) is technology that enables machines to simulate human intelligence — learning from data, recognizing patterns, making decisions, and understanding language. It powers tools like Google Maps, voice assistants, and recommendation systems.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How is AI used in everyday life?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>AI is present in your daily routine — YouTube and Netflix recommendations, Google Maps traffic prediction, face unlock on smartphones, email spam filters, autocorrect, and online shopping suggestions all use AI behind the scenes.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Do I need technical knowledge to use AI tools?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No technical knowledge is required. Most AI tools today are designed for everyday users with simple interfaces. Tools like ChatGPT, Grammarly, and Google Gemini can be used by anyone with basic computer skills.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Is AI safe to use?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>AI tools are generally safe when used responsibly. Avoid sharing sensitive personal information, use trusted platforms, and always verify important AI-generated content with reliable sources before acting on it.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What are ethical AI practices?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Ethical AI means using AI fairly, transparently, and responsibly. This includes being aware of algorithm bias, protecting user privacy, avoiding misuse of AI-generated content, and thinking critically before trusting AI outputs.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How can I protect my data privacy with AI?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Never share passwords, ID numbers, or sensitive documents with AI tools. Read the privacy policy of any app you use, stick to well-known platforms, and be cautious about what photos or personal information you upload.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Why does AI sometimes give wrong answers?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>AI can generate incorrect information — a phenomenon called "hallucination." This happens because AI predicts responses based on patterns in training data rather than truly understanding facts. Always verify AI answers with trusted sources.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How can AI help students?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>AI can help students by explaining difficult concepts simply, proofreading writing, translating languages, solving math step-by-step, and organizing study schedules. However, it should be used as a learning aid — not a replacement for your own thinking.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What is a deepfake and how do I spot one?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>A deepfake is AI-generated fake video or image that makes a real person appear to say or do something they never did. To spot one — look for unnatural blinking, blurry edges around the face, or inconsistent lighting. Always verify shocking content before sharing.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Will AI replace human jobs?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>AI is changing jobs rather than simply replacing them. While some repetitive tasks are being automated, new AI-related roles are being created. Skills like creativity, critical thinking, and empathy remain uniquely human — learning to work with AI is the best approach.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-robot"></i> Everyday AI</h3>
+                <p>Promoting digital literacy and awareness of AI in everyday applications.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="awareness.html">Awareness</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="survey.html">Survey</a></li>
+                    <li><a href="community.html">Forum</a></li>
+                    <li><a href="chatbot.html">Chatbot</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Everyday AI Project | Community Engagement Project by Gaud Shivangi | All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

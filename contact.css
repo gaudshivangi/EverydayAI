@@ -1,0 +1,355 @@
+/* ============================================
+   CONTACT PAGE STYLES - MATCHING MAIN THEME
+   ============================================ */
+
+/* ============================================
+   MAIN CONTAINER - GRID LAYOUT
+   ============================================ */
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 300px; 
+    gap: 3rem;
+    align-items: start;
+    padding: 2.5rem;
+}
+
+/* ============================================
+   LEFT COLUMN - INFO
+   ============================================ */
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Header Layout: Image beside Text */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* CIRCULAR IMAGE */
+.photo-circle {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 8px 32px rgba(0, 229, 255, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.photo-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 229, 255, 0.25);
+}
+
+.photo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Title Styling */
+.profile-title h2 {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.profile-title h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.profile-title .role {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+/* Body Styling */
+.profile-body p {
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   CONTACT DETAILS LIST
+   ============================================ */
+
+.contact-details {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-details li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.contact-details i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+}
+
+.contact-details a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.contact-details a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+/* ============================================
+   RIGHT COLUMN - QR CODE 
+   ============================================ */
+
+.contact-qr {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: transparent; 
+    border: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    border-left: 1px solid rgba(0, 229, 255, 0.2); 
+}
+
+.contact-qr h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+}
+
+.contact-qr p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.qr-section {
+    background: rgba(0, 229, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.qr-section::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-light));
+    border-radius: var(--radius-md);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+}
+
+.qr-section:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 229, 255, 0.3);
+    background: rgba(0, 229, 255, 0.1);
+}
+
+.qr-section:hover::before {
+    opacity: 0.3;
+    filter: blur(20px);
+}
+
+.qr-section img {
+    max-width: 180px;
+    width: 100%;
+    display: block;
+    border-radius: var(--radius-sm);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.qr-section:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* ============================================
+   GLASS CARD STYLES
+   ============================================ */
+
+.glass-card {
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    padding: var(--spacing-md);
+    box-shadow: var(--glow-cyan);
+    transition: var(--transition-normal);
+    animation: fadeIn 0.6s ease-out;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 229, 255, 0.3);
+    box-shadow: 0 16px 48px rgba(0, 229, 255, 0.15);
+}
+
+/* ============================================
+   RESPONSIVE FIXES
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .contact-qr {
+        max-width: 400px;
+        margin: 0 auto;
+        border-left: none;
+        border-top: 1px solid rgba(0, 229, 255, 0.2);
+        padding-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .photo-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .contact-details {
+        align-items: center;
+    }
+
+    .profile-title h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .photo-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-title h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-qr {
+        padding: 1.5rem;
+    }
+
+    .contact-qr h4 {
+        font-size: 1rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* ============================================
+   CLICKABLE QR CODE LINK
+   ============================================ */
+
+.qr-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: var(--radius-md);
+    transition: transform 0.3s ease;
+}
+
+.qr-link:hover {
+    transform: translateY(-3px);
+}
+
+.qr-link:hover .qr-section {
+    border-color: rgba(0, 229, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+/* ============================================
+   REFERENCES SECTION STYLE
+   ============================================ */
+
+/* Center the text in this specific section */
+.references-section .glass-card {
+    text-align: center;
+}
+
+/* Force Icon to be Cyan */
+.references-section .glass-card h2 i {
+    color: var(--secondary); /* Change to #00e5ff if this doesn't work */
+    margin-right: 0.5rem;
+}
+
+/* Center the List numbers */
+.references-list {
+    list-style-position: inside; /* Moves numbers inside to align with text */
+    padding: 0;
+    margin: 0;
+    color: var(--text-secondary);
+    display: inline-block; /* Allows the block to be centered */
+    text-align: left; /* Keeps text aligned left visually, but block is centered */
+}
+
+.references-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}

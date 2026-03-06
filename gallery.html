@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Everyday AI Media Gallery – Digital literacy resources showcasing how AI is used in daily life applications.">
+    <title>Media Gallery - Everyday AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <i class="fas fa-robot"></i>
+            <span>Everyday AI</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="awareness.html">Awareness</a></li>
+            <li><a href="survey.html">Survey</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="chatbot.html">Chatbot</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<section class="page-header">
+    <div class="container">
+        <h1>Media Gallery</h1>
+        <p>Understanding Artificial Intelligence in Everyday Life</p>
+    </div>
+</section>
+
+<!-- Filter Tabs -->
+<section class="section">
+    <div class="container">
+        <div class="filter-tabs">
+<button class="tab-btn active" data-category="all">All</button>
+<button class="tab-btn" data-category="infographics">Infographics</button>
+<button class="tab-btn" data-category="posters">Posters</button>
+<button class="tab-btn" data-category="videos">Videos</button>
+        </div>
+    </div>
+</section>
+<div class="gallery-content-wrapper">
+<!-- Infographics Section -->
+<section class="section" id="infographics-section">  <!-- Infographics -->
+    <div class="container">
+        <div class="glass-card">
+            <div class="section-header">
+                <i class="fas fa-chart-pie"></i>
+                <h2>AI Infographics</h2>
+            </div>
+            <p style="text-align:center; color:var(--text-secondary); margin-bottom:2rem; font-size:0.95rem;">
+                Visual guides to understanding AI concepts, ethics, and everyday applications
+            </p>
+
+            <!-- Slider -->
+            <div class="infographic-slider-wrapper">
+
+                <!-- Prev Button -->
+                <button class="slider-btn slider-prev" onclick="slideInfographic(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <!-- Track -->
+                <div class="infographic-slider">
+                    <div class="infographic-track" id="infographicTrack">
+
+                        <div class="infographic-card">
+                            <div class="infographic-img">
+                                <img src="Images/Infographic1(Daily%20Life).png" alt="AI in Daily Life">
+                                <div class="infographic-overlay">
+                                    <button class="view-btn" onclick="openLightbox(this)">
+                                        <i class="fas fa-expand"></i> View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="infographic-info">
+                                <span class="infographic-num">01 / 05</span>
+                                <h4>AI in Everyday Life</h4>
+                                <p>How AI is used in smartphones, apps, and online platforms daily.</p>
+                            </div>
+                        </div>
+
+                        <div class="infographic-card">
+                            <div class="infographic-img">
+                                <img src="Images/Infographic2(Applicaton).png" alt="How AI Works">
+                                <div class="infographic-overlay">
+                                    <button class="view-btn" onclick="openLightbox(this)">
+                                        <i class="fas fa-expand"></i> View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="infographic-info">
+                                <span class="infographic-num">02 / 05</span>
+                                <h4>How Artificial Intelligence Works</h4>
+                                <p>Basic explanation of data, algorithms, and machine learning.</p>
+                            </div>
+                        </div>
+
+                        <div class="infographic-card">
+                            <div class="infographic-img">
+                                <img src="Images/Infographic3(Use%20Case).png" alt="AI Ethics">
+                                <div class="infographic-overlay">
+                                    <button class="view-btn" onclick="openLightbox(this)">
+                                        <i class="fas fa-expand"></i> View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="infographic-info">
+                                <span class="infographic-num">03 / 05</span>
+                                <h4>Ethical Use of AI</h4>
+                                <p>Awareness about bias, privacy, and responsible AI usage.</p>
+                            </div>
+                        </div>
+
+                        <div class="infographic-card">
+                            <div class="infographic-img">
+                                <img src="Images/Infographic4(Benefits).png" alt="AI and Privacy">
+                                <div class="infographic-overlay">
+                                    <button class="view-btn" onclick="openLightbox(this)">
+                                        <i class="fas fa-expand"></i> View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="infographic-info">
+                                <span class="infographic-num">04 / 05</span>
+                                <h4>AI and Data Privacy</h4>
+                                <p>Understanding how AI collects and uses personal data.</p>
+                            </div>
+                        </div>
+
+                        <div class="infographic-card">
+                            <div class="infographic-img">
+                                <img src="Images/Infographic5(Impact).png" alt="Future of AI">
+                                <div class="infographic-overlay">
+                                    <button class="view-btn" onclick="openLightbox(this)">
+                                        <i class="fas fa-expand"></i> View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="infographic-info">
+                                <span class="infographic-num">05 / 05</span>
+                                <h4>Future of AI</h4>
+                                <p>What AI means for careers, education, and society ahead.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+    <!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+    <div class="lightbox-content">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <i class="fas fa-times"></i>
+        </button>
+        <!-- Add these two buttons -->
+        <button class="lightbox-nav lightbox-prev" onclick="lightboxSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" onclick="lightboxSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <img src="" alt="" id="lightbox-img" style="transition: opacity 0.15s ease;">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+</div>
+
+                <!-- Next Button -->
+                <button class="slider-btn slider-next" onclick="slideInfographic(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+            <!-- Dots -->
+            <div class="slider-dots" id="sliderDots">
+                <span class="slider-dot active" onclick="goToSlide(0)"></span>
+                <span class="slider-dot" onclick="goToSlide(1)"></span>
+                <span class="slider-dot" onclick="goToSlide(2)"></span>
+                <span class="slider-dot" onclick="goToSlide(3)"></span>
+                <span class="slider-dot" onclick="goToSlide(4)"></span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+    <div class="lightbox-content">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <i class="fas fa-times"></i>
+        </button>
+        <img src="" alt="" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+</div>
+
+
+
+<!-- Posters Section -->
+<section class="section bg-alt" id="posters-section">  <!-- Posters -->
+    <div class="container">
+        <div class="glass-card">
+            <div class="section-header">
+                <i class="fas fa-image"></i>
+                <h2>Awareness Posters</h2>
+            </div>
+            <p style="text-align:center; color:var(--text-secondary); margin-bottom:2rem; font-size:0.95rem;">
+                Creative posters promoting AI awareness and digital literacy in the community
+            </p>
+
+            <!-- Slider -->
+            <div class="infographic-slider-wrapper" id="posterSliderWrapper">
+
+                <button class="slider-btn poster-prev" onclick="slidePoster(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="infographic-slider">
+                    <div class="infographic-track" id="posterTrack">
+
+                        <div class="infographic-card">
+                            <div class="infographic-img">
+                                <img src="Images/Poster1.png" alt="Everyday AI Awareness">
+                                <div class="infographic-overlay">
+                                    <button class="view-btn" onclick="openPosterLightbox(this)">
+                                        <i class="fas fa-expand"></i> View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="infographic-info">
+                                <span class="infographic-num">01 / 05</span>
+                                <h4>Everyday AI Awareness</h4>
+                                <p>AI is not future technology — it is already around us.</p>
+                            </div>
+                        </div>
+
+                        <div class="infographic-card">
+                            <div class="infographic-img">
+                                <img src="Images/Poster2.png" alt="Learn AI Basics">
+                                <div class="infographic-overlay">
+                                    <button class="view-btn" onclick="openPosterLightbox(this)">
+                                        <i class="fas fa-expand"></i> View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="infographic-info">
+                                <span class="infographic-num">02 / 05</span>
+                                <h4>Learn AI Basics</h4>
+                                <p>Encouraging digital literacy and AI awareness among students.</p>
+                            </div>
+                        </div>
+
+                        <div class="infographic-card">
+                            <div class="infographic-img">
+                                <img src="Images/Poster3.png" alt="Use AI Responsibly">
+                                <div class="infographic-overlay">
+                                    <button class="view-btn" onclick="openPosterLightbox(this)">
+                                        <i class="fas fa-expand"></i> View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="infographic-info">
+                                <span class="infographic-num">03 / 05</span>
+                                <h4>Use AI Responsibly</h4>
+                                <p>Promoting ethical and safe use of AI-powered tools.</p>
+                            </div>
+                        </div>
+
+                        <div class="infographic-card">
+                            <div class="infographic-img">
+                                <img src="Images/Poster4.png" alt="AI and Privacy">
+                                <div class="infographic-overlay">
+                                    <button class="view-btn" onclick="openPosterLightbox(this)">
+                                        <i class="fas fa-expand"></i> View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="infographic-info">
+                                <span class="infographic-num">04 / 05</span>
+                                <h4>AI and Your Privacy</h4>
+                                <p>Know your rights and protect your data in an AI world.</p>
+                            </div>
+                        </div>
+
+                        <div class="infographic-card">
+                            <div class="infographic-img">
+                                <img src="Images/Poster5.webp" alt="Future of AI">
+                                <div class="infographic-overlay">
+                                    <button class="view-btn" onclick="openPosterLightbox(this)">
+                                        <i class="fas fa-expand"></i> View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="infographic-info">
+                                <span class="infographic-num">05 / 05</span>
+                                <h4>The Future is AI</h4>
+                                <p>Prepare yourself for an AI-driven world with the right skills.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="slider-btn poster-next" onclick="slidePoster(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+            <!-- Dots -->
+            <div class="slider-dots" id="posterDots">
+                <span class="poster-dot active" onclick="goToPoster(0)"></span>
+                <span class="poster-dot" onclick="goToPoster(1)"></span>
+                <span class="poster-dot" onclick="goToPoster(2)"></span>
+                <span class="poster-dot" onclick="goToPoster(3)"></span>
+                <span class="poster-dot" onclick="goToPoster(4)"></span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Poster Lightbox -->
+<div class="lightbox" id="posterLightbox">
+    <div class="lightbox-overlay" onclick="closePosterLightbox()"></div>
+    <div class="lightbox-content">
+        <button class="lightbox-close" onclick="closePosterLightbox()">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-nav lightbox-prev" onclick="posterLightboxSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" onclick="posterLightboxSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <img src="" alt="" id="poster-lightbox-img" style="transition: opacity 0.15s ease;">
+        <div class="lightbox-caption" id="poster-lightbox-caption"></div>
+    </div>
+</div>
+<!-- Videos Section -->
+<section class="section" id="videos-section">  <!-- Videos -->
+    <div class="container">
+        <div class="glass-card">
+            <h2><i class="fas fa-video"></i> Educational Videos</h2>
+
+            <div class="videos-grid">
+
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/2ePf9rue1Ao" allowfullscreen></iframe>
+                    <h4>What is Artificial Intelligence?</h4>
+                    <p>Simple explanation of AI for beginners.</p>
+                </div>
+
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/ad79nYk2keg" allowfullscreen></iframe>
+                    <h4>AI in Daily Applications</h4>
+                    <p>How AI is used in Google, YouTube, Maps, and social media.</p>
+                </div>
+
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/0wy4u34fii4" allowfullscreen></iframe>
+                    <h4>Ethics & Safety in AI</h4>
+                    <p>Understanding privacy, bias, and responsible AI use.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</div> <!-- end gallery-content-wrapper -->
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-robot"></i> Everyday AI</h3>
+                <p>Promoting digital literacy and awareness of AI in everyday applications.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="awareness.html">Awareness</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="survey.html">Survey</a></li>
+                    <li><a href="community.html">Forum</a></li>
+                    <li><a href="chatbot.html">Chatbot</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Everyday AI Project | Community Engagement Project by Gaud Shivangi | All rights reserved.</p>
+        </div>
+    </div>
+</footer><script src="script.js"></script>
+<script src="gallery.js"></script>
+<script src="chatbot-widget.js"></script>
+</body>
+</html>

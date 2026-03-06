@@ -1,0 +1,427 @@
+/* Gallery Page Styles */
+
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.gallery-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-normal);
+}
+
+.gallery-item:hover .gallery-image img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-btn {
+    background: var(--accent-color);
+    border: none;
+    color: var(--white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.gallery-btn:hover {
+    background: var(--accent-dark);
+    transform: scale(1.05);
+}
+
+.gallery-info {
+    padding: var(--spacing-md);
+}
+
+.gallery-info h4 {
+    color: var(--white);
+    margin-bottom: var(--spacing-xs);
+}
+
+.gallery-info p {
+    color: var(--light-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.video-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-info {
+    padding: var(--spacing-md);
+}
+
+.video-info h4 {
+    color: var(--white);
+    margin-bottom: var(--spacing-xs);
+}
+
+.video-info p {
+    color: var(--light-secondary);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.video-duration {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Infographic Slider ── */
+.infographic-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.infographic-slider {
+    flex: 1;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.infographic-track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+}
+
+/* Each card takes full width of slider */
+.infographic-card {
+    min-width: 100%;
+    background: var(--surface2);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 16 / 9;
+}
+
+.infographic-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.infographic-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay */
+.infographic-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,14,26,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.infographic-card:hover .infographic-overlay { opacity: 1; }
+
+.view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.4rem;
+    background: rgba(0,229,255,0.15);
+    border: 1px solid var(--primary-color);
+    border-radius: 100px;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-btn:hover {
+    background: rgba(0,229,255,0.3);
+    transform: scale(1.05);
+}
+
+/* Info */
+.infographic-info {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.infographic-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    opacity: 0.6;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.infographic-info h4 {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.infographic-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ── Prev / Next Buttons ── */
+.slider-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 1px solid var(--glass-border);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    z-index: 2;
+}
+
+.slider-btn:hover {
+    background: rgba(0,229,255,0.1);
+    border-color: var(--primary-color);
+    transform: scale(1.08);
+}
+
+.slider-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ── Dots ── */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background: var(--primary-color);
+    width: 24px;
+    border-radius: 100px;
+}
+
+/* ── Lightbox ── */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,14,26,0.95);
+    backdrop-filter: blur(8px);
+}
+
+.lightbox-content {
+    position: relative;
+    z-index: 1;
+    max-width: 90vw;
+    max-height: 90vh;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px; right: 0;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    width: 32px; height: 32px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.lightbox-close:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: var(--radius-lg);
+    display: block;
+}
+
+.lightbox-caption {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .infographic-img { height: 280px; }
+    .slider-btn { width: 34px; height: 34px; font-size: 0.75rem; }
+}
+
+/* Lightbox nav buttons */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,229,255,0.1);
+    border: 1px solid rgba(0,229,255,0.3);
+    border-radius: 50%;
+    width: 42px; height: 42px;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 2;
+}
+
+.lightbox-prev { left: -56px; }
+.lightbox-next { right: -56px; }
+
+.lightbox-nav:hover {
+    background: rgba(0,229,255,0.25);
+    border-color: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
